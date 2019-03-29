@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools" android:id="@+id/nav_graph"
+            app:startDestination="@id/newsFeedFragment">
+
+    <fragment android:id="@+id/newsFeedFragment"
+              android:name="hr.bagy94.factorynewsreader.ui.newsfeed.NewsFeedFragment"
+              android:label="Factory News"
+              tools:layout="@layout/fragment_news_feed">
+        <action android:id="@+id/action_open_article"
+                app:destination="@id/newsSliderFragment"
+                app:exitAnim="@anim/nav_default_exit_anim"
+                app:popUpTo="@+id/newsFeedFragment">
+                <argument
+                    android:name="news"
+                    app:argType="hr.bagy94.factorynewsreader.model.Article[]"/>
+        </action>
+    </fragment>
+    <fragment android:id="@+id/newsSliderFragment"
+              android:name="hr.bagy94.factorynewsreader.ui.newsdetail.NewsSliderFragment"
+              android:label="news_detail_fragment"
+              tools:layout="@layout/fragment_news_slider"/>
+</navigation>
